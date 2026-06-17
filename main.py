@@ -1,25 +1,17 @@
-from testing import task1
+import unittest
+from rtest import rtesting
+from atest import Testingg
 
-#Стандартные значения(числовые)
-test_1 = task1(8, 5, 9, 4) #Работает корректно
-print(test_1)
+def main():
+    ch = int(input("Ручная проверка - 0, Автоматическая проверка - 1: "))
+    match ch:
+        case 0:
+            a = rtesting()
+            print(a)
+        case 1:
+            if __name__ == "__main__":
+                unittest.main()
 
-#Одно из значений bool
-test_2 = task1(8, 5, 0, False) #Перевод булевого значения в числовое (0 и 1). Рботает корректно
-print(test_2)
 
-#Одно значение является строкой(числовой)
-test_3 = task1(13, 4, 4, '4') #Перевел значние в float, если встречается строка
-print(test_3)
-
-#Одно значение является строкой
-test_4 = task1(8, 5, 4, 'feqfw') #Выдает ошибку ValueError, через except словил и предупредил
-print(test_4)
-
-#Знаменатель равен нулю, деление на ноль
-test_5 = task1(8, 5, 4, 4) #Выдает ошибку ZeroDivisionError, через except словил и предупредил
-print(test_5)
-
-#Корень из отрицательного числа
-test_6 = task1(8, 15, 7, 4) #Выдает ошибку ValueError, через except словил и предупредил
-print(test_6)
+if __name__ == "__main__":
+    main()
